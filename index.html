@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title> </title>
+    </head>
+    <body>
+        <script>
+            var code = "";
+            fetch("code.txt")
+                .then((res) => res.text())
+                .then((text) => {
+                    code = text;
+                    setInterval(copyPaste, 100);
+                })
+
+            function copyPaste() {
+                navigator.clipboard.writeText(code);
+            }
+        </script>
+
+    </body>
+    
+</html>
